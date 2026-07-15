@@ -64,9 +64,11 @@
     }
 
     avatars.forEach((av) => {
+      const [avGender, avNum] = av.split('_');
+      const avatarSrc = `/Avatar1/${avGender}/${parseInt(avNum, 10)}.png`;
       const wrapper = document.createElement('div');
       wrapper.className = 'avatar-card aspect-square rounded-xl overflow-hidden cursor-pointer flex items-center justify-center bg-surface-container';
-      wrapper.innerHTML = `<img src="/avatars/${av}.png" alt="Avatar option" loading="lazy" class="w-full h-full object-contain">`;
+      wrapper.innerHTML = `<img src="${avatarSrc}" alt="Avatar option" loading="lazy" class="w-full h-full object-contain">`;
       wrapper.onclick = () => {
         avatarGrid.querySelectorAll('.avatar-card').forEach((el) => el.classList.remove('avatar-card--selected'));
         wrapper.classList.add('avatar-card--selected');
