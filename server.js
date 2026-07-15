@@ -122,7 +122,8 @@ app.post('/api/waitlist/verify-token', verifyLimiter, async (req, res) => {
 // own /api/auth/complete-profile flow. There is no separate waitlist-only
 // user record -- registered_via: 'waitlist' just tags where the account
 // originated.
-const AVATAR_PATTERN = /^(male|female)_(0[1-9]|10)$/;
+// Matches male_01..male_25 and female_01..female_30 (current avatar pack size)
+const AVATAR_PATTERN = /^(male_(0[1-9]|1[0-9]|2[0-5])|female_(0[1-9]|[12][0-9]|30))$/;
 
 app.post('/api/waitlist/complete-profile', registerLimiter, async (req, res) => {
   try {
