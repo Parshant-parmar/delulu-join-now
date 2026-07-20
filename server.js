@@ -17,7 +17,11 @@ const ALLOWED_DOMAINS = [
   'psy.rishihood.edu.in',
   'csds.rishihood.edu.in',
   'makers.rishihood.edu.in',
-  'design.rishihood.edu.in'
+  'design.rishihood.edu.in',
+  'bennett.edu.in',
+  'cuchd.in',
+  'cumail.in',
+  's.amity.edu'
 ];
 
 const app = express();
